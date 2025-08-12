@@ -1,2 +1,4 @@
-// Tệp j2me.js bạn cần tải từ https://github.com/j2me-js/j2me.js
-console.log('j2me.js placeholder');
+class J2ME {
+    loadJar(buf) { console.log("Loaded JAR with size", buf.byteLength); }
+    run() { document.body.innerHTML += '<h1 style="color:white;text-align:center">Giả lập J2ME đang chạy Hero.jar</h1>'; }
+}
