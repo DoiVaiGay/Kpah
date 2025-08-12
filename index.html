@@ -1,11 +1,34 @@
-
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>J2ME Online</title>
+<meta charset="UTF-8">
+<title>Hero J2ME Online</title>
+<style>
+html, body {
+    margin: 0;
+    padding: 0;
+    background: black;
+    height: 100%;
+    overflow: hidden;
+}
+canvas {
+    display: block;
+    margin: auto;
+    background: black;
+}
+</style>
 </head>
 <body>
-  <iframe src="run.html?file=Hero.jar" style="border:none;width:100%;height:100vh;"></iframe>
+<script src="j2me.js"></script>
+<script>
+// Load game Hero.jar khi trang mở
+fetch("Hero.jar")
+.then(response => response.arrayBuffer())
+.then(buffer => {
+    const emulator = new J2ME();
+    emulator.loadJar(buffer);
+    emulator.run();
+});
+</script>
 </body>
 </html>
