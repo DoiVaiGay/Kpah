@@ -1,0 +1,16 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Run J2ME</title>
+  <script src="https://hex007.github.io/freej2me-web/freej2me.js"></script>
+</head>
+<body>
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const file = urlParams.get('file') || 'apps/Hero.jar';
+    loadJ2ME(file);
+  </script>
+</body>
+</html>
