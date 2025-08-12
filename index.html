@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Chạy hero.jar bằng j2me.js</title>
+  <script src="j2me.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 30px;
+    }
+    #j2me-canvas {
+      border: 1px solid #000;
+      background: #fff;
+    }
+  </style>
+</head>
+<body>
+  <h1>Chạy hero.jar với j2me.js</h1>
+  <canvas id="j2me-canvas" width="240" height="320"></canvas>
+
+  <script>
+    if (typeof J2ME === 'undefined') {
+      alert('Không tìm thấy j2me.js. Vui lòng kiểm tra lại!');
+    } else {
+      J2ME.create({
+        jarUrl: 'hero.jar',
+        canvas: document.getElementById('j2me-canvas'),
+        onReady: function() {
+          console.log('J2ME đã sẵn sàng, trò chơi bắt đầu.');
+        },
+        onError: function(e) {
+          console.error('Lỗi khi chạy j2me.js:', e);
+          alert('Lỗi khi chạy trò chơi, xem console để biết chi tiết.');
+        }
+      });
+    }
+  </script>
+</body>
+</html>
